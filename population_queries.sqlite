@@ -1,0 +1,36 @@
+--56 entries from Africa
+Select Count(*) 
+From countries
+Where continent= 'Africa';
+
+--Total population in Oceania in 2005 is 32million 
+Select SUM(population)
+From population_years AS pop
+JOIN countries AS con
+ON pop.country_id = con.id
+Where pop.year= '2005' AND con.continent= 'Oceania';
+
+--The average population of countries in South America in 2003 is 25 million
+Select AVG(population)
+From population_years AS pop
+JOIN countries AS con
+ON pop.country_id = con.id
+Where pop.year = '2003' AND con.continent= 'South America';
+
+--Smallest country in 2007 (by population) is Niue
+
+Select countries.name, countries.continent, MIN(population)
+From population_years
+Join countries 
+On population_years.country_id = countries.id
+Where population_years.year = '2007';
+--Average pop of Poland is 38 million
+Select AVG(population)
+From population_years AS pop
+Join countries as con
+ON pop.country_id = con.id
+Where con.name = 'Poland';
+
+--There are countriees with THE in the name
+
+
