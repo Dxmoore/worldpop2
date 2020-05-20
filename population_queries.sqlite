@@ -31,6 +31,6 @@ Join countries as con
 ON pop.country_id = con.id
 Where con.name = 'Poland';
 
---There are countriees with THE in the name
+
 
 
